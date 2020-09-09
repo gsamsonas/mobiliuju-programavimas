@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_mainFragment_to_dynamicTextFragment"
             app:destination="@id/dynamicTextFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_graphicalInformationInputFragment"
+            app:destination="@id/graphicalInformationInputFragment" />
     </fragment>
     <fragment
         android:id="@+id/dynamicTextFragment"
@@ -32,4 +35,9 @@
             android:name="message"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/graphicalInformationInputFragment"
+        android:name="com.gsamsonas.mobiliujuprogramavimas.fragments.GraphicalInformationInputFragment"
+        android:label="Grafine vartotojo sasaja"
+        tools:layout="@layout/fragment_graphical_information_input"/>
 </navigation>

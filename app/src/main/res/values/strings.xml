@@ -2,4 +2,27 @@
     <string name="app_name">Mobiliuju Programavimas</string>
 
     <string name="words_counter">%d Words</string>
+    
+    <string-array name="week_days">
+        <item/>
+        <item>Pirmadienis</item>
+        <item>Antradienis</item>
+        <item>Treciadienis</item>
+        <item>Ketvirtadienis</item>
+        <item>Penktadienis</item>
+        <item>Sestadienis</item>
+        <item>Sekmadienis</item>
+    </string-array>
+
+    <string-array name="faculty_list">
+        <item>Aplinkos inzinerijos fakultetas</item>
+        <item>Architekturos fakultetas</item>
+        <item>Elektronikos fakultetas</item>
+        <item>Fundamentiniu mokslu fakultetas</item>
+        <item>Kurybiniu industriju fakultetas</item>
+        <item>Mechanikos fakultetas</item>
+        <item>Statybos fakultetas</item>
+        <item>Transporto inzinerijos fakultetas</item>
+        <item>Verslo vadybos fakultetas</item>
+    </string-array>
 </resources>
