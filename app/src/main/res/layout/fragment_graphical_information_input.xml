@@ -19,49 +19,43 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tvTitleLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="Pavadinimas"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="HardcodedText" />
-
-            <EditText
-                android:id="@+id/etTitle"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="@={viewModel.title}"
-                android:hint="Pavadinimas"
-                android:labelFor="@id/tvTitleLabel"
-                android:maxLines="1"
-                app:layout_constraintTop_toBottomOf="@id/tvTitleLabel"
-                tools:ignore="Autofill,HardcodedText,TextFields" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/tvFacultyLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="Fakultetas"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etTitle"
-                tools:ignore="HardcodedText" />
+                <EditText
+                    android:id="@+id/etTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@={viewModel.title}"
+                    android:imeOptions="actionNext"
+                    android:hint="Pavadinimas"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    tools:ignore="Autofill,HardcodedText,TextFields" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <AutoCompleteTextView
-                android:id="@+id/actvFaculty"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilFaculty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="@={viewModel.faculty}"
-                android:hint="Fakultetas"
-                android:labelFor="@id/tvFacultyLabel"
-                android:maxLines="1"
-                app:layout_constraintTop_toBottomOf="@id/tvFacultyLabel"
-                tools:ignore="HardcodedText" />
+                app:layout_constraintTop_toBottomOf="@id/tilTitle">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actvFaculty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@={viewModel.faculty}"
+                    android:imeOptions="actionDone"
+                    android:hint="Fakultetas"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    tools:ignore="HardcodedText" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/tvDifficultyLabel"
@@ -70,7 +64,7 @@
                 android:layout_margin="16dp"
                 android:text="Sudetingumas"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/actvFaculty"
+                app:layout_constraintTop_toBottomOf="@id/tilFaculty"
                 tools:ignore="HardcodedText" />
 
             <RatingBar
