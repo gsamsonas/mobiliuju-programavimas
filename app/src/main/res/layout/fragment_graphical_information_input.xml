@@ -57,7 +57,7 @@
                 android:layout_margin="16dp"
                 android:hint="Fakultetas"
                 android:labelFor="@id/tvFacultyLabel"
-                android:maxLines="3"
+                android:maxLines="1"
                 app:layout_constraintTop_toBottomOf="@id/tvFacultyLabel"
                 tools:ignore="HardcodedText" />
 
