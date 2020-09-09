@@ -4,6 +4,7 @@
     <string name="words_counter">%d Words</string>
     
     <string-array name="week_days">
+        <item/>
         <item>Pirmadienis</item>
         <item>Antradienis</item>
         <item>Treciadienis</item>

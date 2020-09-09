@@ -34,6 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                android:text="@={viewModel.title}"
                 android:hint="Pavadinimas"
                 android:labelFor="@id/tvTitleLabel"
                 android:maxLines="1"
@@ -55,6 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                android:text="@={viewModel.faculty}"
                 android:hint="Fakultetas"
                 android:labelFor="@id/tvFacultyLabel"
                 android:maxLines="1"
@@ -78,6 +80,7 @@
                 android:layout_margin="16dp"
                 android:numStars="5"
                 android:stepSize="1"
+                android:rating="@={viewModel.difficulty}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvDifficultyLabel" />
 
@@ -122,6 +125,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text="Registruotis"
+                android:checked="@{viewModel.register}"
                 app:layout_constraintTop_toBottomOf="@id/timePicker"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="HardcodedText" />
@@ -132,6 +136,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text="Save"
+                android:onClick="@{() -> viewModel.onSave()}"
                 app:layout_constraintTop_toBottomOf="@id/switchRegister"
                 tools:ignore="HardcodedText" />
 
