@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Mobiliuju Programavimas</string>
+
+    <string name="words_counter">%d Words</string>
+</resources>

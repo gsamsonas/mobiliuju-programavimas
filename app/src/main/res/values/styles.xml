@@ -1,0 +1,29 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textViewStyle">@style/AppTheme.NormalTextView</item>
+        <item name="android:buttonStyle">@style/AppTheme.NormalButton</item>
+    </style>
+
+    <style name="AppTheme.NormalTextView" parent="AppTheme">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppTheme.SelectableTextViewCard" parent="AppTheme.NormalTextView">
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:background">@drawable/bg_white_card</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="AppTheme.NormalButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_normal_button_enabled</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>
