@@ -9,4 +9,14 @@ data class GraphicalInformationModel (
     val dayOfWeek: String,
     val time: LocalTime,
     val registered: Boolean
-)
+) {
+    override fun toString(): String {
+        return """Title: $title
+            |Faculty: $faculty
+            |Difficulty: $difficulty
+            |Day: $dayOfWeek
+            |Time: $time
+            |Registered: $registered
+        """.trimMargin()
+    }
+}

@@ -1,5 +1,6 @@
 package com.gsamsonas.mobiliujuprogramavimas.fragments
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Spinner
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.google.android.material.snackbar.Snackbar
@@ -47,6 +49,17 @@ class GraphicalInformationInputFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        viewModel.onSave.observe(viewLifecycleOwner, EventObserver {
+            AlertDialog.Builder(requireContext())
+                .setTitle("Information output")
+                .setMessage(it.toString())
+                .setPositiveButton("Ok") { dialog, _ ->
+                     dialog.dismiss()
+                }
+                .setCancelable(false)
+                .create()
+                .show()
+        })
         viewModel.onError.observe(viewLifecycleOwner, EventObserver {
             when (it) {
                 GraphicalInformationInputViewModel.GraphicalInformationInputError.MissingTitle -> {
