@@ -33,6 +33,9 @@ class MainFragment : Fragment() {
             },
             Pair("Trecias lab: Grafine vartotojo sasaja") {
                 findNavController().navigate(MainFragmentDirections.actionMainFragmentToGraphicalInformationInputFragment())
+            },
+            Pair("Ketvirtas lab: Leidimai") {
+                findNavController().navigate(MainFragmentDirections.actionMainFragmentToWebViewFragment())
             }
         ))
     }
