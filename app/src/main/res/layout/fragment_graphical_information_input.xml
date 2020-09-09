@@ -125,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text="Registruotis"
-                android:checked="@{viewModel.register}"
+                android:checked="@={viewModel.register}"
                 app:layout_constraintTop_toBottomOf="@id/timePicker"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="HardcodedText" />
