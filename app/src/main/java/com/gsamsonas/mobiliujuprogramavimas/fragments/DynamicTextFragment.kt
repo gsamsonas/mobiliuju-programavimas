@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.gsamsonas.mobiliujuprogramavimas.databinding.FragmentDynamicTextBinding
 import com.gsamsonas.mobiliujuprogramavimas.features.externalinput.EXTERNAL_INPUT_REQUEST_CODE

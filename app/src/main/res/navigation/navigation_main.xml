@@ -3,8 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_main"
-    app:startDestination="@id/dynamicTextFragment">
+    app:startDestination="@id/mainFragment">
 
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.gsamsonas.mobiliujuprogramavimas.fragments.MainFragment"
+        android:label="Select the task"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_dynamicTextFragment"
+            app:destination="@id/dynamicTextFragment" />
+    </fragment>
     <fragment
         android:id="@+id/dynamicTextFragment"
         android:name="com.gsamsonas.mobiliujuprogramavimas.fragments.DynamicTextFragment"
