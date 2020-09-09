@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.Spinner
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -35,16 +32,14 @@ class GraphicalInformationInputFragment : Fragment() {
         binding = FragmentGraphicalInformationInputBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         setupAutoComplete(binding.actvFaculty)
         setupSpinner(binding.spinnerWeekDay)
-        binding.timePicker.setOnTimeChangedListener { _, hourOfDay, minute ->
-            viewModel.onTimeSelected(LocalTime.of(hourOfDay, minute))
-        }
-        viewModel.onTimeSelected(LocalTime.of(
-            binding.timePicker.hour,
-            binding.timePicker.minute
-        ))
-        return binding.root
+        setupTimePicker(binding.timePicker)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -90,6 +85,16 @@ class GraphicalInformationInputFragment : Fragment() {
         ).also {
             autoCompleteTextView.setAdapter(it)
         }
+    }
+
+    private fun setupTimePicker(timePicker: TimePicker) {
+        timePicker.setOnTimeChangedListener { _, hourOfDay, minute ->
+            viewModel.onTimeSelected(LocalTime.of(hourOfDay, minute))
+        }
+        viewModel.onTimeSelected(LocalTime.of(
+            timePicker.hour,
+            timePicker.minute
+        ))
     }
 
     private fun setupSpinner(spinner: Spinner) {
