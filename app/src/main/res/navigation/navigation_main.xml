@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_mainFragment_to_graphicalInformationInputFragment"
             app:destination="@id/graphicalInformationInputFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
     </fragment>
     <fragment
         android:id="@+id/dynamicTextFragment"
@@ -40,4 +43,9 @@
         android:name="com.gsamsonas.mobiliujuprogramavimas.fragments.GraphicalInformationInputFragment"
         android:label="Grafine vartotojo sasaja"
         tools:layout="@layout/fragment_graphical_information_input"/>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.gsamsonas.mobiliujuprogramavimas.fragments.WebViewFragment"
+        android:label="Web View"
+        tools:layout="@layout/fragment_webview"/>
 </navigation>
