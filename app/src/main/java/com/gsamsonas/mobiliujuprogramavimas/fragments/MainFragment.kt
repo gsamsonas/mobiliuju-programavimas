@@ -30,6 +30,9 @@ class MainFragment : Fragment() {
         recyclerView.adapter = SelectLabAdapter(listOf(
             Pair("Antras laboratorinis darbas") {
                 findNavController().navigate(MainFragmentDirections.actionMainFragmentToDynamicTextFragment())
+            },
+            Pair("Trecias lab: Grafine vartotojo sasaja") {
+                findNavController().navigate(MainFragmentDirections.actionMainFragmentToGraphicalInformationInputFragment())
             }
         ))
     }
