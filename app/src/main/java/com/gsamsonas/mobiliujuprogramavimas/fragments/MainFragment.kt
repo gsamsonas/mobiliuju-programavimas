@@ -36,6 +36,9 @@ class MainFragment : Fragment() {
             },
             Pair("Ketvirtas lab: Leidimai") {
                 findNavController().navigate(MainFragmentDirections.actionMainFragmentToWebViewFragment())
+            },
+            Pair("Penktas lab: Fragmentai") {
+                findNavController().navigate(MainFragmentDirections.actionMainFragmentToListViewFragment())
             }
         ))
     }

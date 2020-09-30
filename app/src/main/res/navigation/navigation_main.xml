@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_mainFragment_to_webViewFragment"
             app:destination="@id/webViewFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_listViewFragment"
+            app:destination="@id/listViewFragment" />
     </fragment>
     <fragment
         android:id="@+id/dynamicTextFragment"
@@ -48,4 +51,9 @@
         android:name="com.gsamsonas.mobiliujuprogramavimas.fragments.WebViewFragment"
         android:label="Web View"
         tools:layout="@layout/fragment_webview"/>
+    <fragment
+        android:id="@+id/listViewFragment"
+        android:name="com.gsamsonas.mobiliujuprogramavimas.fragments.ListViewFragment"
+        android:label="Fragmentai"
+        tools:layout="@layout/fragment_list_view"/>
 </navigation>
