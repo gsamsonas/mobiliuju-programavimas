@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_mainFragment_to_listViewFragment"
             app:destination="@id/listViewFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_menuAndThreadsFragment"
+            app:destination="@id/menuAndThreadsFragment" />
     </fragment>
     <fragment
         android:id="@+id/dynamicTextFragment"
@@ -56,4 +59,9 @@
         android:name="com.gsamsonas.mobiliujuprogramavimas.fragments.ListViewFragment"
         android:label="Fragmentai"
         tools:layout="@layout/fragment_list_view"/>
+    <fragment
+        android:id="@+id/menuAndThreadsFragment"
+        android:name="com.gsamsonas.mobiliujuprogramavimas.fragments.MenuAndThreadsFragment"
+        android:label="Meniu ir gijos"
+        tools:layout="@layout/fragment_menu_and_threads"/>
 </navigation>
