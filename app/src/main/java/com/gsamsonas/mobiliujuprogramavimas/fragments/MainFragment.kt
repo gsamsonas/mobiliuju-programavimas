@@ -39,6 +39,9 @@ class MainFragment : Fragment() {
             },
             Pair("Penktas lab: Fragmentai") {
                 findNavController().navigate(MainFragmentDirections.actionMainFragmentToListViewFragment())
+            },
+            Pair("Šeštas lab: Meniu ir gijos") {
+                findNavController().navigate(MainFragmentDirections.actionMainFragmentToMenuAndThreadsFragment())
             }
         ))
     }
