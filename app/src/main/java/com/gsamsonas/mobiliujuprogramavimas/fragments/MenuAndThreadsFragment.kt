@@ -3,6 +3,7 @@ package com.gsamsonas.mobiliujuprogramavimas.fragments
 import android.app.TimePickerDialog
 import android.os.Bundle
 import android.view.*
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.gsamsonas.mobiliujuprogramavimas.R
@@ -18,6 +19,8 @@ class MenuAndThreadsFragment : Fragment() {
 
     private lateinit var binding: FragmentMenuAndThreadsBinding
 
+    private var clickedContextTextView: TextView? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
@@ -32,6 +35,13 @@ class MenuAndThreadsFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        registerForContextMenu(binding.tvTimeDifference)
+        registerForContextMenu(binding.tvTextLength)
+        registerForContextMenu(binding.tvLetter)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -50,6 +60,32 @@ class MenuAndThreadsFragment : Fragment() {
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onCreateContextMenu(
+        menu: ContextMenu,
+        view: View,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, view, menuInfo)
+        if (view is TextView) {
+            clickedContextTextView = view
+            requireActivity().menuInflater.inflate(R.menu.menu_text_view, menu)
+        }
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menuCalculateLength -> {
+                viewModel.onCalculateLength(clickedContextTextView?.text?.toString() ?: "")
+                true
+            }
+            R.id.menuOutputLetters -> {
+                viewModel.onOutputLetter(clickedContextTextView?.text?.toString() ?: "")
+                true
+            }
+            else -> super.onContextItemSelected(item)
         }
     }
 
