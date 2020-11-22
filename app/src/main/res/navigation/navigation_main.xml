@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_mainFragment_to_menuAndThreadsFragment"
             app:destination="@id/menuAndThreadsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_batteryNotificationFragment"
+            app:destination="@id/batteryNotificationFragment" />
     </fragment>
     <fragment
         android:id="@+id/dynamicTextFragment"
@@ -64,4 +67,9 @@
         android:name="com.gsamsonas.mobiliujuprogramavimas.fragments.MenuAndThreadsFragment"
         android:label="Meniu ir gijos"
         tools:layout="@layout/fragment_menu_and_threads"/>
+    <fragment
+        android:id="@+id/batteryNotificationFragment"
+        android:name="com.gsamsonas.mobiliujuprogramavimas.fragments.BatteryNotificationFragment"
+        android:label="Pranešimai ir jų perėmimas"
+        tools:layout="@layout/fragment_battery_notification"/>
 </navigation>

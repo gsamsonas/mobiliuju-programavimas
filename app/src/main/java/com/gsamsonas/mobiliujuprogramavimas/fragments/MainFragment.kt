@@ -42,6 +42,9 @@ class MainFragment : Fragment() {
             },
             Pair("Šeštas lab: Meniu ir gijos") {
                 findNavController().navigate(MainFragmentDirections.actionMainFragmentToMenuAndThreadsFragment())
+            },
+            Pair("Septintas lab: Pranešimai ir jų perėmimas") {
+                findNavController().navigate(MainFragmentDirections.actionMainFragmentToBatteryNotificationFragment())
             }
         ))
     }
