@@ -2,10 +2,12 @@ package com.gsamsonas.mobiliujuprogramavimas.customviews
 
 import android.content.Context
 import android.graphics.*
+import android.media.MediaPlayer
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Toast
+import com.gsamsonas.mobiliujuprogramavimas.R
 import java.lang.Integer.*
 import kotlin.math.abs
 import kotlin.math.min
@@ -67,6 +69,11 @@ class CircleDrawer(context: Context, attr: AttributeSet) : View(context, attr) {
             MotionEvent.ACTION_POINTER_UP -> {
                 getCenterAndRadius()?.let {
                     val collides = drawShape?.collides(it) ?: return@let
+                    if (collides) {
+                        MediaPlayer.create(context, R.raw.you_good).start()
+                    } else {
+                        MediaPlayer.create(context, R.raw.swag).start()
+                    }
                     Toast.makeText(context, collides.toString(), Toast.LENGTH_SHORT).show()
                 }
                 secondFinger = null
