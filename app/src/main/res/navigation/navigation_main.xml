@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_mainFragment_to_batteryNotificationFragment"
             app:destination="@id/batteryNotificationFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_gesturesAndMediaFragment"
+            app:destination="@id/gesturesAndMediaFragment" />
     </fragment>
     <fragment
         android:id="@+id/dynamicTextFragment"
@@ -72,4 +75,9 @@
         android:name="com.gsamsonas.mobiliujuprogramavimas.fragments.BatteryNotificationFragment"
         android:label="Pranešimai ir jų perėmimas"
         tools:layout="@layout/fragment_battery_notification"/>
+    <fragment
+        android:id="@+id/gesturesAndMediaFragment"
+        android:name="com.gsamsonas.mobiliujuprogramavimas.fragments.GesturesAndMediaFragment"
+        android:label="Grafika, gestų valdymas ir multimedia"
+        tools:layout="@layout/fragment_gestures_and_media"/>
 </navigation>
