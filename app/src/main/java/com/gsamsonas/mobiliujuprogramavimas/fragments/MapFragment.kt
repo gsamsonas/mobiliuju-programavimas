@@ -1,9 +1,7 @@
 package com.gsamsonas.mobiliujuprogramavimas.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.google.android.gms.maps.GoogleMap
@@ -15,6 +13,7 @@ import com.gsamsonas.mobiliujuprogramavimas.R
 import com.gsamsonas.mobiliujuprogramavimas.databinding.FragmentMapBinding
 import com.gsamsonas.mobiliujuprogramavimas.viewmodels.MapViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint
 class MapFragment : Fragment(), OnMapReadyCallback {
@@ -49,6 +48,10 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         this.googleMap = googleMap
+        googleMap.setOnMarkerClickListener { marker ->
+            viewModel.selectMarker(marker.title)
+            false
+        }
         viewModel.markerList.value?.forEach {
             googleMap.addMarker(
                 MarkerOptions()

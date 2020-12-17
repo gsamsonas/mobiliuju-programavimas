@@ -2,6 +2,7 @@ package com.gsamsonas.mobiliujuprogramavimas.viewmodels
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gsamsonas.mobiliujuprogramavimas.data.MapRepository
@@ -17,6 +18,14 @@ class MapViewModel @ViewModelInject constructor(
     val longitude = MutableLiveData<String>()
 
     val markerList = mapRepository.getMarkerList()
+
+    private val selectedMarker = MutableLiveData<String>()
+    val deleteVisible = Transformations.map(selectedMarker) {
+        it != null
+    }
+    fun selectMarker(title: String?) {
+        selectedMarker.value = title
+    }
 
     fun save(){
         val title = title.value ?: return
@@ -34,6 +43,13 @@ class MapViewModel @ViewModelInject constructor(
                 latitudeString.toDouble(),
                 longitudeString.toDouble()
             ))
+        }
+    }
+
+    fun removeMarker() {
+        viewModelScope.launch {
+            selectedMarker.value?.let { mapRepository.deleteMarker(it) }
+            selectedMarker.value = null
         }
     }
 }

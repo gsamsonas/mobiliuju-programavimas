@@ -24,4 +24,10 @@ class MapRepository @Inject constructor(
             mapMarkerDao.insert(MapMarkerEntity(marker.title, marker.latitude, marker.longitude))
         }
     }
+
+    suspend fun deleteMarker(title: String) {
+        withContext(Dispatchers.IO) {
+            mapMarkerDao.deleteMarkerByTitle(title)
+        }
+    }
 }

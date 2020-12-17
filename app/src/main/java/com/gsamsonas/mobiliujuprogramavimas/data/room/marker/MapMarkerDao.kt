@@ -14,4 +14,7 @@ interface MapMarkerDao {
 
     @Query("SELECT * FROM marker_table")
     fun getMarkerListLive(): LiveData<List<MapMarkerEntity>>
+
+    @Query("DELETE FROM marker_table WHERE title=:title")
+    fun deleteMarkerByTitle(title: String)
 }
