@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "129488675335",
+    "project_id": "mobiliuju-programavimas",
+    "storage_bucket": "mobiliuju-programavimas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129488675335:android:72de1fdc380ec9038440a2",
+        "android_client_info": {
+          "package_name": "com.gsamsonas.mobiliujuprogramavimas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129488675335-pagm66q3imc22nf3hemrl52mifpfh9bf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY_cPrTvdT5Qlwf-kILRE7d5w81nOKEG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129488675335-pagm66q3imc22nf3hemrl52mifpfh9bf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
