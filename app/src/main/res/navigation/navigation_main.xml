@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_mainFragment_to_gesturesAndMediaFragment"
             app:destination="@id/gesturesAndMediaFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
     </fragment>
     <fragment
         android:id="@+id/dynamicTextFragment"
@@ -80,4 +83,9 @@
         android:name="com.gsamsonas.mobiliujuprogramavimas.fragments.GesturesAndMediaFragment"
         android:label="Grafika, gestų valdymas ir multimedia"
         tools:layout="@layout/fragment_gestures_and_media"/>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.gsamsonas.mobiliujuprogramavimas.fragments.MapFragment"
+        android:label="Žemėlapiai ir duomenų bazės"
+        tools:layout="@layout/fragment_map"/>
 </navigation>

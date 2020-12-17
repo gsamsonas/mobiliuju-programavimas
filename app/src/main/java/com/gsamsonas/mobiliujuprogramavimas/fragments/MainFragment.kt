@@ -20,7 +20,7 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMainBinding.inflate(inflater, container, false)
         setupRecycler(binding.rvLabList)
         return binding.root
@@ -48,6 +48,9 @@ class MainFragment : Fragment() {
             },
             Pair("Grafika, gestų valdymas ir multimedia") {
                 findNavController().navigate(MainFragmentDirections.actionMainFragmentToGesturesAndMediaFragment())
+            },
+            Pair("Žemėlapiai ir duomenų bazės") {
+                findNavController().navigate(MainFragmentDirections.actionMainFragmentToMapFragment())
             }
         ))
     }
